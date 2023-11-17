@@ -32,9 +32,9 @@ if (isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php include('templates/head.php'); ?>
-</head>
+
+<?php include('templates/head.php'); ?>
+
 <body class="grey lighten-4">
 <?php include('templates/header.php'); ?>
 

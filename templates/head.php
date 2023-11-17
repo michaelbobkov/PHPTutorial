@@ -1,3 +1,4 @@
+<head>
 <title>Products </title>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -14,3 +15,4 @@
         padding: 20px;
     }
 </style>
+</head>

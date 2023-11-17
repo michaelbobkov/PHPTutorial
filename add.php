@@ -26,7 +26,7 @@
     <form>
         <label for="email">Your Email:</label>
         <input type="text" id="email">
-        <label for="title">Your Title:</label>
+        <label for="title">Title:</label>
         <input type="text" id="title">
         <label for="requirements">Requirements:</label>
         <input type="text" id="requirements">

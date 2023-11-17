@@ -16,6 +16,10 @@
         .brand-text{
             color: #39dd55 !important;
         }
+        form{
+            max-width: 500px;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body class="grey lighten-4">

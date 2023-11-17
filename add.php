@@ -28,6 +28,13 @@ if (isset($_POST['submit'])){
             $errors['requirements'] = "Requirements must be letters and spaces<br/>";
         }
     }
+
+    if(array_filter($errors)){
+        echo 'Errors are in the form';
+    }else{
+        echo 'Form is valid';
+        header('Location: index.php');
+    }
 }
 
 ?>

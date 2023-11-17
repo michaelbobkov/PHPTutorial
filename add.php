@@ -1,8 +1,24 @@
 <?php
 if (isset($_POST['submit'])){
+
+    if(empty($_POST['email'])){
+        echo "Email must be set\n";
+    }else{
     echo htmlentities($_POST['email']);
-    echo htmlentities($_POST['title']);
-    echo htmlentities($_POST['requirements']);
+
+    }
+    if(empty($_POST['title'])){
+        echo "title must be set\n";
+    }else{
+        echo htmlentities($_POST['title']);
+
+    }
+    if(empty($_POST['requirements'])){
+        echo "requirements must be set";
+    }else{
+        echo htmlentities($_POST['requirements']);
+
+    }
 }
 
 ?>

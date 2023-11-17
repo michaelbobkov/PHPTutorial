@@ -1,29 +1,31 @@
 <?php
+$title = $email = $requirements ='';
+$errors = array('email'=>'', 'title'=>'', 'requirements'=>'');
 if (isset($_POST['submit'])){
 
     if(empty($_POST['email'])){
-        echo "Email must be set <br/>";
+        $errors['email'] = "Email must be set <br/>";
     }else{
     $email = $_POST['email'];
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        echo "email must be valid <br/>";
+        $errors['email'] = "Email must be valid <br/>";
     }
 
     }
     if(empty($_POST['title'])){
-        echo "title must be set<br/>";
+        $errors['title'] = "Title must be set<br/>";
     }else{
         $title  = $_POST['title'];
         if(!preg_match('/[a-zA-Z\s]+$/', $title)){
-            echo "Title must be letters and spaces";
+            $errors['title'] = "Title must be letters and spaces<br/>";
         }
     }
     if(empty($_POST['requirements'])){
-        echo "requirements must be set";
+        $errors['requirements'] = "Requirements must be set<br/>";
     }else{
         $requirements  = $_POST['title'];
         if(!preg_match('/[a-zA-Z\s]+$/', $requirements)){
-            echo "Requirements must be letters and spaces";
+            $errors['requirements'] = "Requirements must be letters and spaces<br/>";
         }
     }
 }
@@ -42,11 +44,14 @@ if (isset($_POST['submit'])){
     <h3 class="center"></h3>
     <form class="white" action="add.php" method="post">
         <label for="email">Your Email:</label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="email" name="email" value="<?php echo htmlspecialchars($email)?>">
+        <div class="red-text"><?php echo $errors['email']?></div>
         <label for="title">Title:</label>
-        <input type="text" id="title" name="title">
+        <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($title)?>">
+        <div class="red-text"><?php echo $errors['title']?></div>
         <label for="requirements">Requirements:</label>
-        <input type="text" id="requirements" name="requirements">
+        <input type="text" id="requirements" name="requirements" value="<?php echo htmlspecialchars($requirements)?>">
+        <div class="red-text"><?php echo $errors['requirements']?></div>
         <div class="center">
             <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
         </div>

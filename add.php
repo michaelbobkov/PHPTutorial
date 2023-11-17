@@ -2,22 +2,29 @@
 if (isset($_POST['submit'])){
 
     if(empty($_POST['email'])){
-        echo "Email must be set\n";
+        echo "Email must be set <br/>";
     }else{
-    echo htmlentities($_POST['email']);
+    $email = $_POST['email'];
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "email must be valid <br/>";
+    }
 
     }
     if(empty($_POST['title'])){
-        echo "title must be set\n";
+        echo "title must be set<br/>";
     }else{
-        echo htmlentities($_POST['title']);
-
+        $title  = $_POST['title'];
+        if(!preg_match('/[a-zA-Z\s]+$/', $title)){
+            echo "Title must be letters and spaces";
+        }
     }
     if(empty($_POST['requirements'])){
         echo "requirements must be set";
     }else{
-        echo htmlentities($_POST['requirements']);
-
+        $requirements  = $_POST['title'];
+        if(!preg_match('/[a-zA-Z\s]+$/', $requirements)){
+            echo "Requirements must be letters and spaces";
+        }
     }
 }
 

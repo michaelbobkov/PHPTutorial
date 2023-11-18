@@ -11,8 +11,7 @@ $result = mysqli_query($connect, $sql);
 $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 mysqli_free_result($result);
 mysqli_close($connect);
-print_r($products);
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,27 @@ print_r($products);
 
 <body class="grey lighten-4">
 <?php include('templates/header.php'); ?>
+<h4 class="center grey-text">Products</h4>
+<div class="container">
+    <div class="row">
+        <?php
+        foreach ($products as $product) {  ?>
+            <div class="col s6 md3">
+                <div class="card z-depth-0">
+                    <div class="card-content center">
+                        <h6><?php echo htmlspecialchars($product['title'])?></h6>
+                        <div><?php echo htmlspecialchars($product['requirements'])?></div>
+                    </div>
+                    <div class="card-action right-align">
+                        <a class="brand-text" href="#">more info</a>
+                    </div>
+                </div>
+            </div>
 
+        <?php } ?>
+
+    </div>
+</div>
 <?php include('templates/footer.php'); ?>
 </body>
 </html>

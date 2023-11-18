@@ -1,6 +1,11 @@
 <?php
 
+//connect ot database
+$connect = mysqli_connect('localhost', 'michael', '1234', 'test');
 
+if(!$connect){
+    echo 'Connection error: '.mysqli_connect_error();
+}
 ?>
 
 <!DOCTYPE html>

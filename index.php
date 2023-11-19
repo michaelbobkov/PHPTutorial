@@ -23,15 +23,15 @@ mysqli_close($connect);
 <div class="container">
     <div class="row">
         <?php
-        foreach ($products as $product) {  ?>
+        foreach ($products as $product) : ?>
             <div class="col s6 md3">
                 <div class="card z-depth-0">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($product['title'])?></h6>
                         <ul>
-                            <?php foreach (explode(',',$product['requirements']) as $item){?>
+                            <?php foreach (explode(',',$product['requirements']) as $item):?>
                                 <li><?php echo htmlspecialchars($item) ?></li>
-                            <?php } ?>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                     <div class="card-action right-align">
@@ -40,7 +40,12 @@ mysqli_close($connect);
                 </div>
             </div>
 
-        <?php } ?>
+        <?php endforeach; ?>
+        <?php if (count($products)>=2):?>
+            <p>There are many requirements</p>
+        <?php else:?>
+            <p>There are one requirement</p>
+        <?php endif;?>
 
     </div>
 </div>

@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style type="text/css">
         .brand{
-            background: #cbb09c !important;
+            background: #77ff !important;
         }
         .brand-text{
-            color: #cbb09c !important;
+            color: #77ff !important;
         }
         form{
             max-width: 460px;

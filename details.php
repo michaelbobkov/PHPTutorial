@@ -1,4 +1,5 @@
 <?php
+$conn = null;
 include ('config/db_connect.php');
 $product = null;
 if(isset($_GET['id'])){

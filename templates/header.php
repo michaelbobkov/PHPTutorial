@@ -1,10 +1,11 @@
 <?php
-session_start();
-if($_SERVER['QUERY_STRING'] == 'noname'){
-    //unset($_SESSION['name']);
-    session_unset();
-}
-$name = $_SESSION['name'];
+    session_start();
+    if($_SERVER['QUERY_STRING'] == 'noname'){
+        session_unset();
+    }
+    $name = $_SESSION['name'] ?? 'Guest';
+
+    $gender =$_COOKIE['gender'] ?? 'Unknown';
 ?>
 <head>
     <title>Products</title>
@@ -37,6 +38,7 @@ $name = $_SESSION['name'];
         <a href="index.php" class="brand-logo brand-text">Order Products</a>
         <ul id="nav-mobile" class="right hide-on-small-and-down">
             <li class="grey-text">Hello, <?php echo htmlspecialchars($name) ?></li>
+            <li class="grey-text">(<?php echo htmlspecialchars($gender) ?>)</li>
             <li><a href="add.php" class="btn brand z-depth-0">Add a Product</a></li>
         </ul>
     </div>

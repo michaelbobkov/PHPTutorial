@@ -1,7 +1,20 @@
 <?php
-$conn = null;
-include ('config/db_connect.php');
+
 $product = null;
+include ('config/db_connect.php');
+
+if (isset($_POST['delete'])){
+    $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+    $sql ="DELETE FROM products WHERE id=$id_to_delete";
+
+    if(mysqli_query($conn, $sql)){
+        //success
+        header('Location: index.php');
+    }else{
+        echo 'Query error:' . mysqli_error($conn);
+    }
+}
+
 if(isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $sql ="SELECT * FROM products WHERE id=$id";

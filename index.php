@@ -25,7 +25,7 @@ mysqli_close($conn);
 
 <?php include('templates/header.php'); ?>
 
-<h4 class="center grey-text">Products</h4>
+<h4 class="center grey-text">Orders</h4>
 
 <div class="container">
     <div class="row">

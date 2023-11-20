@@ -34,6 +34,7 @@ mysqli_close($conn);
 
             <div class="col s6 m4">
                 <div class="card z-depth-0">
+                    <img src="images/food.png" class="image">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($product['title']); ?></h6>
                         <ul class="grey-text">

@@ -14,6 +14,13 @@
             margin: 20px auto;
             padding: 20px;
         }
+        .image{
+            width: 100px;
+            margin: 40px auto 0px;
+            display: block;
+            position: relative;
+
+        }
     </style>
 </head>
 <body class="grey lighten-4">
